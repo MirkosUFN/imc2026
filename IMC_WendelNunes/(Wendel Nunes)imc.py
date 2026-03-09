@@ -64,7 +64,7 @@ IMC = []
 for indice in range(tamanho):
 
   pessoa = arquivo.iloc[indice]
-  imc = (pessoa['Peso'] / pessoa['Altura'])
+  imc = (pessoa['Peso'] / (pessoa['Altura'] * pessoa['Altura']))
   IMC.append(imc)
 
 arquivo['IMC'] = IMC
