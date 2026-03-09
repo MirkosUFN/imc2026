@@ -12,3 +12,7 @@ Responder
 *Qual o grupo IMC dominante nas 20 pessoas?
 
 **Utilizar Pandas na codificação**
+
+Colocar o código python no repositório, com o arquivo nomeado como:
+
+imc-[nome].py ou imc-[nome].ipynb
