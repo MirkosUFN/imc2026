@@ -32,11 +32,12 @@ def classificar_imc(imc):
 arquivo['Grupo_IMC'] = arquivo['IMC'].apply(classificar_imc)
 
 grupo_dominante = arquivo['Grupo_IMC'].mode()[0]
-print(f"Grupo IMC dominante: {grupo_dominante}")
+quantidade = (arquivo['Grupo_IMC'] == grupo_dominante).sum()
 
 print("Visualização final da tabela:")
 display(arquivo)
 
 caminho_salvar = '/content/drive/MyDrive/Ciência de Dados/Pessoas_IMC_Atualizado.xlsx'
 arquivo.to_excel(caminho_salvar, index=False)
+
 print(f"DataFrame salvo com sucesso em: {caminho_salvar}")
