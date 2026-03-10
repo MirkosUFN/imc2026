@@ -36,11 +36,19 @@ quantidade = (arquivo['Grupo_IMC'] == grupo_dominante).sum()
 
 print(f"Grupo IMC dominante: {grupo_dominante} (Quantidade: {quantidade})")
 
-print("Visualização final da tabela:")
+def contar_vogais(nome):
+    vogais = "aeiouAEIOUáéíóúÁÉÍÓÚãõÃÕâêîôûÂÊÎÔÛ" 
+    return sum(1 for letra in str(nome) if letra in vogais)
+
+arquivo['Num_Vogais_Nome'] = arquivo['Nome'].apply(contar_vogais)
+
+arquivo['Relacao_Idade_IMC'] = arquivo['Idade'] / arquivo['IMC']
+
 display(arquivo)
 
 caminho_salvar = '/content/drive/MyDrive/Ciência de Dados/Pessoas_IMC_Atualizado.xlsx'
 arquivo.to_excel(caminho_salvar, index=False)
 
 print(f"DataFrame salvo com sucesso em: {caminho_salvar}")
+
 
